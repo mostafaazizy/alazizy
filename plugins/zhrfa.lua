@@ -1,20 +1,20 @@
 --[[
 
-│تم تطوير وبرمجة السورس من قبل فارس .
-│@IE_S9
+│تم تطوير وبرمجة السورس من قبل مصطفي .
+│@Mostafa_aziza
 #-------------------------------------------------------------------
 ]]
 
-local function bassela(msg,MsgText)
+local function basalazizy(msg,MsgText)
 if msg.type ~= "pv" then
 if MsgText[1] == "زخرفه" then
-redis:setex(sela..":basselNow:"..msg.sender_user_id_,500,true)
+redis:setex(alazizy..":basselNow:"..msg.sender_user_id_,500,true)
 sendMsg(msg.chat_id_,msg.id_,"| حسننا , الان يمكنك ارسال الاسم ولبعض الرموز المميزه اكتب رموز")    
 return false
 end
 
-if redis:get(sela..":basselNow:"..msg.sender_user_id_) then
-redis:del(sela..":basselNow:"..msg.sender_user_id_)
+if redis:get(alazizy..":basselNow:"..msg.sender_user_id_) then
+redis:del(alazizy..":basselNow:"..msg.sender_user_id_)
 if utf8.len(msg.text) > 300 then
 sendMsg(msg.chat_id_,msg.id_,"| لا يمكنك زخرفه اكثر من 20 حرف \n| ارسل امر زخرفه وحاول مجددا بحروف اقل")    
 return false
@@ -830,7 +830,7 @@ bassel9= bassel9:gsub('m','𝕄')
 bassel9= bassel9:gsub('M','𝕄')
 
 
-local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
+local Text_basalazizy = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n2- `"..bassel2..EmojeS[math.random(#EmojeS)]
 .."`\n\n3- `"..bassel3..EmojeS[math.random(#EmojeS)]
 .."`\n\n4- `"..bassel4..EmojeS[math.random(#EmojeS)]
@@ -840,8 +840,8 @@ local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n8- `"..bassel8..Emoje[math.random(#Emoje)]
 .."`\n\n9- `"..bassel9..Emoje[math.random(#Emoje)]
 .."`\n\n10- `"..bassel5..Emoje[math.random(#Emoje)]
-Text_bassela = Text_bassela.."`\n\n اضغط علـي الاسـم ليـتم النـسخ \n★"
-sendMsg(msg.chat_id_,msg.id_,Text_bassela)
+Text_basalazizy = Text_basalazizy.."`\n\n اضغط علـي الاسـم ليـتم النـسخ \n★"
+sendMsg(msg.chat_id_,msg.id_,Text_basalazizy)
 return false
 end
 end
@@ -849,9 +849,9 @@ end
 end
 local function TextRes(msg)
 
-if msg.text and msg.type ~= "pv" and redis:get(sela..":basselNow:"..msg.sender_user_id_) then
+if msg.text and msg.type ~= "pv" and redis:get(alazizy..":basselNow:"..msg.sender_user_id_) then
 Text = msg.text
-redis:del(sela..":basselNow:"..msg.sender_user_id_)
+redis:del(alazizy..":basselNow:"..msg.sender_user_id_)
 if utf8.len(msg.text) > 300 then
 sendMsg(msg.chat_id_,msg.id_," لا يمكنك زخرفه اكثر من 300 حرف \n  ارسل امر زخرفه وحاول مجددا بحروف اقل")    
 return false
@@ -1664,7 +1664,7 @@ bassel9= bassel9:gsub('m','𝕄')
 bassel9= bassel9:gsub('M','𝕄')
 
 
-local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
+local Text_basalazizy = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n2- `"..bassel2..EmojeS[math.random(#EmojeS)]
 .."`\n\n3- `"..bassel3..EmojeS[math.random(#EmojeS)]
 .."`\n\n4- `"..bassel4..EmojeS[math.random(#EmojeS)]
@@ -1674,8 +1674,8 @@ local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n8- `"..bassel8..Emoje[math.random(#Emoje)]
 .."`\n\n9- `"..bassel9..Emoje[math.random(#Emoje)]
 .."`\n\n10- `"..bassel5..Emoje[math.random(#Emoje)]
-Text_bassela = Text_bassela.."`\n\n| اضغـط علـي الاسـم ليتـم النـسخ  \n★"
-sendMsg(msg.chat_id_,msg.id_,Text_bassela)
+Text_basalazizy = Text_basalazizy.."`\n\n| اضغـط علـي الاسـم ليتـم النـسخ  \n★"
+sendMsg(msg.chat_id_,msg.id_,Text_basalazizy)
 return false
 end
 
@@ -1684,18 +1684,18 @@ end
 end
 
 return {
-sela = {
+alazizy = {
 "^(زخرفه)$"
  },
- isela = bassela,
- dsela = TextRes,
+ ialazizy = basalazizy,
+ dalazizy = TextRes,
  }
  
  
 
 --[[
 ████
-│تم تطوير وبرمجة السورس من قبل فارس .
-│@IE_S9
+│تم تطوير وبرمجة السورس من قبل مصطفي .
+│@mostafa_aziza
 #-------------------------------------------------------------------
 ]]
