@@ -1,79 +1,137 @@
-#!/usr/bin/env bash 
+#! / usr / bin / env bash
+
+- [[
+#       @mostafa_aziza
+#                       mostafa_aziza
+#mostafa_aziza
+#             mostafa_aziza
+#                                            mostafa_aziza
+#mostafa_aziza
+# ------------------------------------------------- --------------------
+cd  $ ( cd $ ( dirname $ 0 ) ؛ pwd )
+Day_now = $ ( التاريخ +٪ F )
+الأحمر = ' \ 033 [0 ؛ 31 م '
+SMAY = ' \ 033 [0 ؛ 36 م '
+الأخضر = ' 033 [0 ؛ 32 م '
+الأصفر = ' \ 033 [0 ؛ 33 م '
+LSAMAY = ' \ 033 [01 ؛ 49 م '
+WHITB = ' \ 033 [01 ؛ 90 م '
+WHITEC = ' \ 033 [01 ؛ 91 م '
+CNIL = ' \ 033 [0 م '
+
+الإصدار = ` lsb_release -rs | قص -f1 -d " . " `
+
+إذا [ " إصدار $ "  ==  " 18 " ] ؛ ثم
+صدى -e " $ {SMAY} \ ن "
+صدى -e " ▇▇▇ ▇▇▇ ▄▇▇▇▇▇▄ ▇▇ ▇▇ "
+صدى -e " ▇▇ ▇ ▇ ▇▇ ▄▇ ▇▄ ▇▇ ▇▇ "
+صدى -e " ▇▇ ▇ @mostafa_aziza ▇ ▇▇ ▄▇▄▄▄▄▄▇▄ ▇▇ ▇▇ "
+صدى -e " ▇▇ ▇ ▇ ▇▇ ▄▇ ▇▄ ▇▇ ▇▇ ¦ ديف: @mostafa_aziza "
+صدى -e " ▇▇ ▇ ▇ ▇▇ ▄▇ ¦ ديف: @mostafa_aziza ▇▄ ▇▇ ▇▇ "
+صدى -e " ▇▇ ▇▇ ▇▇ ▄▇ ▇▄ ▇▇ ▇▇¦ المصدر @mostafa_aziza "
+صدى -e " ---------------------------------------------- ------------------------ "
+صدى صوت " $ {CNIL} "
+echo -e " $ {RED} | للاسف لايمكنك تنصيب السورس على نظام اوبنتو { $ {Version} } يجب أن يكون على اصدار اقل مثلا   $ {SMAY} 14 او 16
+$ {CNIL} " ؛
+echo -e " $ {RED} | آسف لا يمكن تثبيت المصدر على Ubuntu { $ {Version} } الرجاء تثبيت النظام على Ubuntu $ {SMAY} 14 أو 16 $ {RED} لتشغيل المصدر SELA
+$ {CNIL} " ؛
+خروج .
+فاي
+
+صدى  -e  " $ {SMAY} \ ن "
+صدى  -e  "                                                         ▄▇▇▇▇▇▄ "
+صدى  -e  "                                                       ▄▇ ▇▄ "
+صدى  -e  "             @mostafa_aziza ▄▇▄▄▄▄▄▇▄ "
+صدى  -e  "                                                 ▄▇ ▇▄¦ ديف: @mostafa_aziza "
+صدى  -e  "                                               ▄▇ ¦ ديف: @mostafa_aziza ▇▄ "
+صدى  -e  "                                              ▄▇ ▇▄¦ مصدر @mostafa_aziza "
+صدى  -e  " ---------------------------------------------- ------------------------ "
+صدى  صوت  " $ {CNIL} "
+
+memory_free = `` awk ' / ^ Mem / {print $ 4} '  <( free -m ) `
+
+إذا [ " $ memory_free "  -le 60] ؛  ثم
+صدى -e " $ {RED} ¦
+¦ تنبيه: حجم ذاكرة الوصول العشوائي $ {WHITEC} أقل من 60 ميغا بايت.
+¦ الآن لا يمكنك تثبيت SOURCE SELA. \ن
+¦ $ {WHITB} ¦ حجم ذاكرة الوصول العشوائي المجانية هو: $ {SMAY} $ {memory_free} ميغابايت $ {CNIL} "
+خروج  .
+فاي
 
 
-#                                  @𝑋𝐵_0𝐵
-#   @𝑋𝐵_0𝐵
-#     
-#                @𝑋𝐵_0𝐵
-#                                @𝑋𝐵_0𝐵
-#                                                            @𝑋𝐵_0𝐵
-#---------------------------------------------------------------------
-cd $(cd $(dirname $0); pwd)
- 
-RED='\033[0;31m'
-SMAY='\033[0;36m' 
-GREEN='\033[0;32m'
-Yellow='\033[0;33m'
-LSAMAY='\033[01;49m'
-WHITB='\033[01;90m'
-WHITEC='\033[01;91m'
-CNIL='\033[0m'
-Version=`lsb_release -rs | cut -f1 -d"."`
+PKG_OK = ` / البيرة / بن / نظام إدارة حزم دبيان الاستعلام --show --showformat = ' $ {ديسيبل: الحالة، الحالة} \ ن '  ' رديس خادم ' `
+إذا [ " $ {PKG_OK} "  ==  " مثبتًا " ] ؛  ثم
+إذا [ " $ 1 "  ==  " -R " ] ؛  ثم
+GET_INSTALL = " لا "
+آخر
+GET_INSTALL = $ ( redis-cli الحصول على SELA_INSTALL )
+فاي
+إذا [ " $ {GET_INSTALL} "  ==  " نعم " ] ؛  ثم
+صدى -e "
+$ {SMAY} >> $ {LSAMAY} المصدر SELA $ {SMAY} مثبت بالفعل ^ _ ^. \ n $ {CNIL} "
+sudo luarocks تثبيت luautf8
+sudo chmod + x ./run
+sudo chmod + x ./TG
+sudo ./run
+خروج .
+فاي 
+فاي
 
-if [ "$Version" == "18" ];then
-echo -e "${GREEN}
-
-                    
-       ▇ @𝑋𝐵_0𝐵   ▇                     ▄▇▄▄▄▄▄▇▄                            
-    ▄▇                                           ¦ Dev : @𝑋𝐵_0𝐵
- ▄▇ ¦ Dev : @𝑋𝐵_0𝐵                    
-                                                               ¦ Source SELA BY @𝑋𝐵_0𝐵
-----------------------------------------------------------------------${CNIL}"
-echo -e "${RED}| للاسف لايمكنك تنصيب السورس ع نظام اوبنتو {${Version}} يجب ان يكون على اصدار  اقل مثلا  ${SMAY}14 او 16
-${CNIL}";
-echo -e "${RED}| Sorry Canot install Source on Ubuntu {${Version}} Please install system To Ubuntu ${SMAY}14 or 16 ${RED} For Run The Source SELA 
-${CNIL}";
-exit;
-fi
-
-
-if [ ! -f "./TG" ]; then
-echo -e "${RED}
-¦
-¦ CAUTION:${WHITB} Your Not Dwonload TG .
-¦ NOW I Run File ${Yellow}./run${WHITB} To install ${SMAY}Source SELA${CNIL} . \n
-\n\n"
-chmod +x ./ins
-./ins
-exit;
-fi
-
-if [ ! -f "./inc/Token.txt" ]; then
-echo -e "${RED}
-¦
-¦ CAUTION:${WHITB} Your Token Bot Not Found .
-¦ NOW I Run File ${SMAY}./RUN.lua${WHITB} To Enter Data For You Bot${CNIL}. \n
-\n\n"
-lua ./inc/Run.lua
-exit;
-fi
-
-
-TOKEN=`cat ./inc/Token.txt`
-sudo chmod +x ./TG
-
-if [ "$1" == "R" ] ; then
-while(true) do
-killall -q ./TG
-sudo rm -fr ../.telegram-cli
-./TG -s inc/Run.lua --bot=$TOKEN
-done
-else
-
-if ! screen -list | grep -q "SELA"; then
-screen -S SELA ./run R
-fi
-screen -S SELA -X kill
-screen -S SELA ./run R
-fi
-
+echo  -e  " $ {WHITB} \ n¦ مصدر التثبيت ... \ n \ n \ n \ n $ {CNIL} "
+sudo apt-get update -y
+sudo apt-get الترقية -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت عام لخصائص البرامج ... \ n \ x1B [0m "
+sudo apt-get install Software-properties-common -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت ubuntu-toolchain ... \ n \ x1B [0m "
+sudo add-apt-repository ppa: ubuntu-toolchain-r / test -y
+# BY _ [SELA >> @mostafa_aziza | كايدو >> @mostafa_aziza]
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت luarocks v2.4.3 ... \ n \ x1B [0m "
+sudo wget https://luarocks.org/releases/luarocks-2.4.3.tar.gz
+sudo tar zxpf luarocks-2.4.3.tar.gz
+القرص المضغوط luarocks-2.4.3
+echo  -e  " \ x1B [01؛ 90m \ n¦ ./configure AND make bootstrap ... \ n \ x1B [0m "
+./ تكوين ؛ sudo جعل التمهيد
+sudo luarocks تثبيت luasocket
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت luasocket ... \ n \ x1B [0m "
+sudo luarocks تثبيت luasec
+sudo luarocks تثبيت luautf8
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت redis-lua ... \ n \ x1B [0m "
+sudo luarocks تثبيت redis-lua
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت lua-cjson ... \ n \ x1B [0m "
+sudo luarocks إزالة lua-cjson2
+sudo luarocks إزالة lua-cjson
+sudo apt-get install lua-cjson
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت Lua-cURL ... \ n \ x1B [0m "
+sudo luarocks تثبيت Lua-cURL
+echo  -e  " \ x1B [01؛ 90m \ n¦ بدء خادم redis ... \ n \ x1B [0m "
+بدء تشغيل خادم redis لخدمة sudo
+sudo apt-get update -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ g ++ - 4.7 -y c ++ - 4.7 التثبيت ... \ n \ x1B [0m "
+sudo apt-get install g ++ - 4.7 -y c ++ - 4.7
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت luasocket ... \ n \ x1B [0m "
+sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -نقوم بفك ضغط git redis-server autoconf g ++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y curl -y htop -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت الشاشة ... \ n \ x1B [0m "
+sudo apt-get install screen -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت libstdc ++ 6 ... \ n \ x1B [0m "
+sudo apt-get install libstdc ++ 6 -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ تثبيت lua-lgi ... \ n \ x1B [0m "
+sudo apt-get install lua-lgi -y
+echo  -e  " \ x1B [01؛ 90m \ n¦ libnotify التثبيت ... \ n \ x1B [0m "
+sudo apt-get install libnotify-dev -y
+قرص مضغوط ..
+echo  -e  " \ x1B [01؛ 90m \ n¦ إزالة luarocks ... \ n \ x1B [0m "
+sudo rm -f r ./luarocks-2.4.3
+sudo rm -f r ./luarocks-2.4.3.tar.gz
+صدى  -e  " $ {WHITB} \ n| تحويل المنطقة الزمنية لآسيا / بغداد ... \ ن $ {CNIL} "
+sudo timedatectl set-timezone Asia / بغداد
+sudo chmod + x TG
+sudo chmod + x run
+chmod + x ./run
+صدى  -e  " \ n
+$ {SMAY} >> التثبيت $ {LSAMAY} المصدر SELA $ {SMAY} اكتمل ^ _ ^. \ n
+لدي الآن معلومات عن بوتك \ n
+1- أدخل رمز الروبوت الخاص بك.
+2- أدخل اسم المستخدم الخاص بك Sudo.
+3- ثم اضغط على Enter لتشغيل Source SELA. \ n \ n
+$ {RED} ملاحظة: $ {Yellow} أرسل \ " / start \" $ {SMAY} إلى برنامجك الآلي لعرض كافة الأوامر. $ {CNIL} "
+./يركض
